@@ -22,6 +22,10 @@ try {
   console.log(`Number for this PR is:`);
   console.log(`${pr_number}`);
   
+  const pr_title = github.context.payload.pull_request.title;
+  console.log(`Title for this PR is:`);
+  console.log(`${pr_title}`);
+  
 } catch (error) {
   console.log('Test failed');
   core.setFailed(error.message);
