@@ -8,10 +8,11 @@ try {
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
+  #const payload = JSON.stringify(github.context.payload, undefined, 2)
+  #console.log(`The event payload: ${payload}`);
   console.log('The body of this PR is:');
   console.log('${github.context.payload.pull_request.body}');
 } catch (error) {
+  console.log('Test failed');
   core.setFailed(error.message);
 }
