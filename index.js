@@ -10,8 +10,9 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   //const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
-  console.log('The body of this PR is:');
-  console.log('${github.context.payload.pull_request.body}');
+  const pr_body = github.context.payload.pull_request.body;
+  console.log(`The body of this PR is:`);
+  console.log(`${pr_body}`);
 } catch (error) {
   console.log('Test failed');
   core.setFailed(error.message);
