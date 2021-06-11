@@ -11,8 +11,17 @@ try {
   //const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
   const pr_body = github.context.payload.pull_request.body;
-  console.log(`The body of this PR is:`);
+  console.log(`Comments for this PR is:`);
   console.log(`${pr_body}`);
+  
+  const pr_key = github.context.payload.pull_request.key;
+  console.log(`Key for this PR is:`);
+  console.log(`${pr_key}`);
+  
+  const pr_number = github.context.payload.pull_request.number;
+  console.log(`Number for this PR is:`);
+  console.log(`${pr_number}`);
+  
 } catch (error) {
   console.log('Test failed');
   core.setFailed(error.message);
